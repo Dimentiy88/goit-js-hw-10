@@ -1,0 +1,142 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+
+.loader {
+  position: absolute;
+  display: block;
+
+  font-style: normal;
+  font-size: 32px;
+  color: rgb(86, 45, 90);
+  text-align: center;
+
+  width: 600px;
+  height: 100px;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #ff3d00;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
+
+.breed-select {
+  max-width: 500px;
+  margin-top: 30px;
+  margin-left: 30px;
+  min-height: 30px;
+  padding: 4px;
+  font-size: 18px;
+}
+.cat-info {
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 20px;
+  padding: 30px;
+  display: flex;
+}
+
+.conteiner {
+  display: contents;
+}
+.conteiner-img {
+  align-items: center;
+  display: flex;
+}
+
+.info-conteiner {
+  width: 400px;
+}
+
+.error {
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-bottom: 0px;
+  font-size: 22px;
+}
+
+/* function renderBreeds(data) {
+  if (!data) {
+    catInfo.innerHTML = '';
+    return;
+  }
+
+  const createMarkup = `
+    <div class = "conteiner">
+    <img class= "conteiner-img" src="${data.url}" alt="${data.breeds[0].name}" width="500">
+    <div class= "info-conteiner">
+    <h2>${data.breeds[0].name}</h2>
+    <p>${data.breeds[0].description}</p>
+    <p><b>Temperament:</b>${data.breeds[0].temperament}</p>
+    </div>
+    </div>`;
+
+  catInfo.innerHTML = createMarkup;
+} */
