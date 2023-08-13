@@ -5,6 +5,7 @@ axios.defaults.headers.common['x-api-key'] =
 import '../css/style.css';
 import 'slim-select/dist/slimselect.css';
 import { fetchBreeds, api_key } from './cat-api';
+import Notiflix from 'notiflix';
 
 const errorItem = document.querySelector('.error');
 const loaderItem = document.querySelector('.loader');
@@ -89,12 +90,9 @@ function renderBreeds(data) {
 }
 
 function errorMessage() {
-  loaderItem.style.display = 'none';
-  loaderItem.textContent = '';
-  errorItem.textContent = 'Oops! Something went wrong! Try reloading the page!';
-  errorItem.style.display = 'block';
+  Notiflix.Notify.failure(
+    'Oops! Something went wrong! Try reloading the page!'
+  );
 }
-
 select.addEventListener('change', fetchCatByBreed);
-
 onLoader();
